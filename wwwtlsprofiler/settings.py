@@ -24,6 +24,9 @@ SECRET_KEY = 's3=mzi$r)+shs3$iz2!1@h7u51o6eul#y!qzlgok37xzva2_(q'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+CORS_ORIGIN_WHITELIST = [
+    'http://localhost:4200',
+]
 
 ALLOWED_HOSTS = ["0.0.0.0", "localhost"]
 
@@ -38,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'web',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
@@ -48,6 +52,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'wwwtlsprofiler.urls'
